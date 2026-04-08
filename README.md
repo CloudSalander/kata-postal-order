@@ -14,10 +14,14 @@ Els torns tenen 5 tipus:
 
 I també tenen un número correlatiu, de tal forma que es mostren com a expressions del tipus:
 
-C024
-E001
-C025
-R123
+C024  
+
+E001  
+
+C025  
+
+R123  
+
 
 És important que els números siguin correlatius per cada codi de torn diferent, ja que indiquen un ordre.
 
