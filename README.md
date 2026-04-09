@@ -1,4 +1,4 @@
-# kata-posta-order
+# kata-postal-order
 
 **Kata 75 per l'especialitat fullstackPHP 8-4-26**
 
