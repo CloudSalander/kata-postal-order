@@ -3,6 +3,6 @@
 
 class Turn {
 
-    public function __construct(private int $id, private TurnType $turn){}
+    public function __construct(public int $id, public TurnType $turn){}
 
 }

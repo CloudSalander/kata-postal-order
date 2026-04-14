@@ -5,7 +5,7 @@ include('TurnType.php');
 
 class TurnManager {
     
-    const TYPE_QUESTION = "Please, introduce type";
+    const TYPE_QUESTION = "Please, introduce option(code)";
     
     private array $turns;
 
@@ -18,9 +18,17 @@ class TurnManager {
         //$id = $this->generateId();
     }
 
-    private function askType(): TurnOption {
-        //TODO: Show Options and Validation!!
-        return TurnType::tryFrom(readline(self::TYPE_QUESTION));
+    private function askType(): TurnType {
+      
+        $option = null;
+    
+        while(is_null($option)) {
+            foreach (TurnType::cases() as $turnType) {
+                echo sprintf("%s - %s\n", $turnType->name, $turnType->value);
+            }
+            $option = TurnType::fromString(readline(self::TYPE_QUESTION));
+        }
+        return $option;
     }
 
     //Call Turn
