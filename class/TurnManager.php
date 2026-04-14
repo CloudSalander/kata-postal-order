@@ -21,8 +21,13 @@ class TurnManager {
         $this->showTurns();
     }
 
-    public function callTurn() {
+    public function callTurn(): void {
         echo $this->turns[0].self::CALL_TURN_MSG.PHP_EOL;
+    }
+
+    public function deleteTurn(): void {
+        array_shift($this->turns);
+        $this->showTurns();
     }
 
     private function askType(): TurnType {
@@ -47,9 +52,8 @@ class TurnManager {
         return count($relatedTurns) + 1;
     }
 
-    private function showTurns() {
+    private function showTurns(): void {
         foreach($this->turns as $turn) echo $turn;        
     }
 
-    //Erase Turn
 }

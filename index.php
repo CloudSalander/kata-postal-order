@@ -14,5 +14,6 @@ while($turns < $turnToGenerate) {
     ++$turns;
 }
 $turnManager->callTurn();
+$turnManager->deleteTurn();
 
 ?>
