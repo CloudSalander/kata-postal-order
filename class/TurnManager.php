@@ -15,7 +15,9 @@ class TurnManager {
 
     public function generateTurn() {
         $type = $this->askType();
-        //$id = $this->generateId();
+        $order = $this->generateOrderId($type);
+        $this->turns[] =  new Turn($order,$type);
+        $this->showTurns();
     }
 
     private function askType(): TurnType {
@@ -29,6 +31,19 @@ class TurnManager {
             $option = TurnType::fromString(readline(self::TYPE_QUESTION));
         }
         return $option;
+    }
+
+    private function generateOrderId(TurnType $turnType): int {
+        $relatedTurns = array_filter(
+            $this->turns,
+            fn($turn) => $turn->type === $turnType
+        );
+        
+        return count($relatedTurns) + 1;
+    }
+
+    private function showTurns() {
+        foreach($this->turns as $turn) echo $turn;        
     }
 
     //Call Turn
