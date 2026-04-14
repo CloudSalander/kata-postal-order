@@ -25,11 +25,10 @@ class TurnManager {
         $option = null;
     
         while(is_null($option)) {
-            foreach (TurnType::cases() as $turnType) {
-                echo sprintf("%s - %s\n", $turnType->name, $turnType->value);
-            }
+            TurnType::showOptions();
             $option = TurnType::fromString(readline(self::TYPE_QUESTION));
         }
+        
         return $option;
     }
 

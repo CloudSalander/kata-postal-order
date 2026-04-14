@@ -7,6 +7,11 @@ enum TurnType: string {
     case O = 'Other Prodecures';
     case I = 'Information';
 
+    public static function showOptions(): void {
+        foreach (self::cases() as $turnType) {
+            echo sprintf("%s - %s\n", $turnType->name, $turnType->value);
+        }
+    }
     
     public static function fromString(string $option): ?self {
         return match($option) {
