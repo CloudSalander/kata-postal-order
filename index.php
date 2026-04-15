@@ -9,9 +9,9 @@ $turnManager = new TurnManager();
 $generatedTurns = 0;
 $turnToGenerate = $argv[1] ?? DEFAULT_TURNS_TO_GENERATE;  
 
-while($turns < $turnToGenerate) {
+while($generatedTurns < $turnToGenerate) {
     $turnManager->generateTurn();
-    ++$turns;
+    ++$generatedTurns;
 }
 $turnManager->callTurn();
 $turnManager->deleteTurn();

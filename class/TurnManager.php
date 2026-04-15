@@ -22,7 +22,7 @@ class TurnManager {
     }
 
     public function callTurn(): void {
-        echo $this->turns[0].self::CALL_TURN_MSG.PHP_EOL;
+        echo $this->turns[0]." ".self::CALL_TURN_MSG.PHP_EOL;
     }
 
     public function deleteTurn(): void {
@@ -53,7 +53,7 @@ class TurnManager {
     }
 
     private function showTurns(): void {
-        foreach($this->turns as $turn) echo $turn;        
+        foreach($this->turns as $turn) echo $turn.PHP_EOL;        
     }
 
 }
